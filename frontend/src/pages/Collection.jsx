@@ -95,13 +95,16 @@ const Collection = () => {
           <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/> Men
+              <input className='w-3' type="checkbox" value={'Laptop'} onChange={toggleCategory}/> Laptop
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory}/> Women
+              <input className='w-3' type="checkbox" value={'Old Laptop'} onChange={toggleCategory}/> Old Laptop
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}/> kids
+              <input className='w-3' type="checkbox" value={'PC'} onChange={toggleCategory}/> PC
+            </p>
+            <p className='flex gap-2'>
+              <input className='w-3' type="checkbox" value={'Other'} onChange={toggleCategory}/> Other
             </p>
           </div>
         </div>
@@ -110,13 +113,16 @@ const Collection = () => {
           <p className='mb-3 text-sm font-medium'>TYPE</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/> Topwear
+              <input className='w-3' type="checkbox" value={'HP'} onChange={toggleSubCategory}/> HP
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/> Bottomwear
+              <input className='w-3' type="checkbox" value={'DELL'} onChange={toggleSubCategory}/> DELL
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/> Winterwear
+              <input className='w-3' type="checkbox" value={'MACBOOK'} onChange={toggleSubCategory}/> MACBOOK
+            </p>
+             <p className='flex gap-2'>
+              <input className='w-3' type="checkbox" value={'Other'} onChange={toggleSubCategory}/> Other
             </p>
           </div>
         </div>

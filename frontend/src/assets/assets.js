@@ -20,6 +20,9 @@ import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 import service_img from './service_img.png'
+import Laptop_img from './Laptop_img.png'
+import pc_img from './pc_img.png'
+import cctv_img from './cctv_img.png'
 
 export const assets = {
     logo,
@@ -40,7 +43,10 @@ export const assets = {
     razorpay_logo,
     stripe_logo,
     cross_icon,
-    service_img
+    service_img,
+    Laptop_img,
+    pc_img,
+    cctv_img,
 }
 
 export const products = [

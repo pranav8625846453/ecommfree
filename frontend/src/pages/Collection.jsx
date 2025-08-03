@@ -98,7 +98,7 @@ const Collection = () => {
               <input className='w-3' type="checkbox" value={'Laptop'} onChange={toggleCategory}/> Laptop
             </p>
             <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Old Laptop'} onChange={toggleCategory}/> Old Laptop
+              <input className='w-3' type="checkbox" value={'Gaming Laptop'} onChange={toggleCategory}/> Gamging Laptop
             </p>
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'PC'} onChange={toggleCategory}/> PC
@@ -121,6 +121,14 @@ const Collection = () => {
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'MACBOOK'} onChange={toggleSubCategory}/> MACBOOK
             </p>
+            <p className='flex gap-2'>
+              <input className='w-3' type="checkbox" value={'ASUS'} onChange={toggleSubCategory}/> ASUS
+            </p>
+            <p className='flex gap-2'>
+              <input className='w-3' type="checkbox" value={'LENOVO'} onChange={toggleSubCategory}/> LENOVO
+            </p>
+            
+
              <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'Other'} onChange={toggleSubCategory}/> Other
             </p>

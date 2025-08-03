@@ -40,5 +40,47 @@
 
 .service-section__content p {
   font-size: 1.1rem;
- 
+}
+
+@media (max-width: 900px) {
+  .service-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .service-section.reverse {
+    flex-direction: column;
+  }
+  .service-section__image,
+  .service-section__content {
+    flex: unset;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .service-section__image img {
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+  .service-section__content h1 {
+    font-size: 1.5rem;
+  }
+  .service-section__content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-section {
+    padding: 1rem 0.25rem;
+    margin: 1rem 0;
+  }
+  .service-section__content {
+    padding: 0.5rem 0.5rem;
+  }
+  .service-section__content h1 {
+    font-size: 1.1rem;
+  }
+  .service-section__content p {
+    font-size: 0.9rem;
+  }
 }

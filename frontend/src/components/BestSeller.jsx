@@ -14,7 +14,7 @@ const BestSeller = () => {
     },[products])
 
   return (
-    <div className='my-10'>
+    <div className='my-10 border-t'>
       <div className='text-center text-3xl py-8'>
         <Title text1={'BEST'} text2={'SELLERS'}/>
       </div>

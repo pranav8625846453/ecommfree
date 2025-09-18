@@ -14,6 +14,9 @@ const ShopContextProvider = (props) => {
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [hasMore, setHasMore] = useState(true);
+    const [page, setPage] = useState(1);
     const [token, setToken] = useState('')
     const navigate = useNavigate();
 
@@ -94,19 +97,30 @@ const ShopContextProvider = (props) => {
 };
 
 
-    const getProductsData = async () => {
+    const getProductsData = async (loadMore = false) => {
         try {
+            setLoading(true);
+            const currentPage = loadMore ? page + 1 : 1;
+            const response = await axios.get(`${backendUrl}/api/product/list?page=${currentPage}&limit=20`);
 
-            const response = await axios.get(backendUrl + '/api/product/list')
             if (response.data.success) {
-                setProducts(response.data.products.reverse())
+                const newProducts = response.data.products.reverse();
+                if (loadMore) {
+                    setProducts(prev => [...prev, ...newProducts]);
+                    setPage(currentPage);
+                } else {
+                    setProducts(newProducts);
+                    setPage(1);
+                }
+                setHasMore(currentPage < response.data.totalPages);
             } else {
-                toast.error(response.data.message)
+                toast.error(response.data.message);
             }
-
         } catch (error) {
-            console.log(error)
-            toast.error(error.message)
+            console.log(error);
+            toast.error(error.message);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -143,7 +157,7 @@ const ShopContextProvider = (props) => {
         cartItems, addToCart,setCartItems,
         getCartCount, updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken, token
+        setToken, token, loading, hasMore, getProductsData
     }
 
     return (

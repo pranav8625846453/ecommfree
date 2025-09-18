@@ -3,10 +3,11 @@ import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets';
 import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
+import Loader from '../components/Loader';
 
 const Collection = () => {
 
-  const { products , search , showSearch } = useContext(ShopContext);
+  const { products , search , showSearch, loading, hasMore, getProductsData } = useContext(ShopContext);
   const [showFilter,setShowFilter] = useState(false);
   const [filterProducts,setFilterProducts] = useState([]);
   const [category,setCategory] = useState([]);
@@ -157,6 +158,21 @@ const Collection = () => {
             ))
           }
         </div>
+
+        {/* Loader */}
+        {loading && <Loader />}
+
+        {/* Load More Button */}
+        {hasMore && !loading && filterProducts.length > 0 && (
+          <div className='flex justify-center py-4'>
+            <button
+              onClick={() => getProductsData(true)}
+              className='bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition'
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </div>
 
     </div>

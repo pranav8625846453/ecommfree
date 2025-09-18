@@ -102,8 +102,8 @@ const Add = ({token}) => {
               <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
                   <option value="Laptop">Laptop</option>
                   <option value="Gaming Laptop">Gaming Laptop</option>
-                  <option value=" PC"> PC</option>
-                  <option value="Other"> Other</option>
+                  <option value="PC">PC</option>
+                  <option value="Other">Other</option>
               </select>
             </div>
 
@@ -127,6 +127,31 @@ const Add = ({token}) => {
         </div>
 
         
+
+        <div className='w-full'>
+          <p className='mb-2'>Product Sizes</p>
+          <div className='flex gap-3'>
+            <div onClick={()=>setSizes(prev => prev.includes("S") ? prev.filter( item => item !== "S") : [...prev,"S"])}>
+              <p className={`${sizes.includes("S") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>S</p>
+            </div>
+
+            <div onClick={()=>setSizes(prev => prev.includes("M") ? prev.filter( item => item !== "M") : [...prev,"M"])}>
+              <p className={`${sizes.includes("M") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>M</p>
+            </div>
+
+            <div onClick={()=>setSizes(prev => prev.includes("L") ? prev.filter( item => item !== "L") : [...prev,"L"])}>
+              <p className={`${sizes.includes("L") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>L</p>
+            </div>
+
+            <div onClick={()=>setSizes(prev => prev.includes("XL") ? prev.filter( item => item !== "XL") : [...prev,"XL"])}>
+              <p className={`${sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XL</p>
+            </div>
+
+            <div onClick={()=>setSizes(prev => prev.includes("XXL") ? prev.filter( item => item !== "XXL") : [...prev,"XXL"])}>
+              <p className={`${sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XXL</p>
+            </div>
+          </div>
+        </div>
 
         <div className='flex gap-2 mt-2'>
           <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
